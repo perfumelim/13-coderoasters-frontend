@@ -1,0 +1,180 @@
+{
+  "quiz_data": [
+    {
+      "id": 1,
+      "title": "What is your coffee experience level?",
+      "img": "https://images.unsplash.com/photo-1593829111182-8a237d2bb024?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+      "cards": [
+        {
+          "id": 1,
+          "title": "I’m pretty new to all of this",
+
+          "content": "I’d like to start with something approachable and easy to love."
+        },
+        {
+          "id": 2,
+          "title": "I’m at an intermediate stage",
+
+          "content": "I buy premium coffee from the grocery store and I know a little about roast levels"
+        },
+        {
+          "id": 3,
+          "title": "I’m pretty advanced",
+
+          "content": "I buy coffee from specialty roasters and I know the difference between blends and single origins."
+        },
+        {
+          "id": 4,
+          "title": "I’m a total coffee nerd",
+
+          "content": "I know my Caturra from my Bourbon and cupping is my favorite hobby."
+        }
+      ],
+      "contents": [
+        {
+          "id": 1,
+          "title": "Why It Matters",
+          "contents": "Great coffee is a (delicious) journey and we want to make suggestions that are best suited to wherever you are on yours. We ask for your experience level first because your following answers can be interpreted very differently depending on how you identify."
+        },
+        {
+          "id": 2,
+          "title": "",
+          "contents": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "What roast level do you typically enjoy?",
+      "img": "https://images.unsplash.com/photo-1592663533909-f75fe1ae99a4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1101&q=80",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Light",
+          "content": ""
+        },
+
+        {
+          "id": 2,
+          "title": "Light-Medium",
+          "content": ""
+        },
+
+        {
+          "id": 3,
+          "title": "Medium",
+          "content": ""
+        },
+
+        {
+          "id": 4,
+          "title": "Medium-Dark",
+          "content": ""
+        },
+
+        {
+          "id": 5,
+          "title": "Dark",
+          "content": ""
+        },
+
+        {
+          "id": 6,
+          "title": "Extra Dark",
+          "content": ""
+        }
+      ],
+      "contents": [
+        {
+          "id": 1,
+          "title": "Why It Matters",
+          "contents": "Certain coffee-making methods are especially good for certain coffees. We start with this question to make sure the coffee we recommend will taste great with your current coffee routine."
+        },
+        {
+          "id": 2,
+          "title": "Do you use Keurig, Nespresso, or other types of pods?",
+          "contents": "If you use refillable pods that work with ground coffee, we can set you up with a great match for your taste preferences. If you only buy prepackaged pods, please keep in mind that none of our roasters offer their coffee this way. If you’re ready to give freshly roasted coffee a try, contact us to chat with a member of our ground support team and find out the best way to switch today."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "How do you like your coffee to taste?",
+      "img": "https://images.unsplash.com/photo-1515283709260-ee29296f1534?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1447&q=80",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Roasty & Smoky",
+          "content": ""
+        },
+        {
+          "id": 2,
+          "title": "Comforting & Rich",
+          "content": ""
+        },
+        {
+          "id": 3,
+          "title": "Subtle & Delicate",
+          "content": ""
+        },
+        {
+          "id": 4,
+          "title": "Sweet & Tart",
+          "content": ""
+        },
+        {
+          "id": 5,
+          "title": "Sweet & Smooth",
+          "content": ""
+        },
+        {
+          "id": 6,
+          "title": "Balanced & Fruity",
+          "content": ""
+        }
+      ],
+      "contents": [
+        {
+          "id": 1,
+          "title": "Why It Matters",
+          "contents": "Some coffees can be enhanced by milk, but others may react negatively and result in an unpleasant taste. A little sugar, sweetener or added flavorings can bring out the natural sweetness of some coffees, but overpower others. We’ll recommend coffee that works best with what you like."
+        },
+        {
+          "id": 2,
+          "title": "",
+          "contents": ""
+        }
+      ]
+    },
+
+    {
+      "id": 4,
+      "title": "What type of coffee do you drink?",
+      "img": "https://images.unsplash.com/photo-1595928642569-a3a948004535?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1395&q=80",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Regular",
+          "content": "I'd like to only receive regular coffee matches."
+        },
+        {
+          "id": 2,
+          "title": "Decaf",
+          "content": "I'd like to only receive decaf coffee matches."
+        }
+      ],
+      "contents": [
+        {
+          "id": 1,
+          "title": "",
+          "contents": ""
+        },
+        {
+          "id": 2,
+          "title": "",
+          "contents": ""
+        }
+      ]
+    }
+  ]
+}

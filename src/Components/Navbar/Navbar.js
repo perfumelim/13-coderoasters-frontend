@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import logo from "./logos.png";
 import { BsSearch, BsPeopleCircle, BsBag } from "react-icons/bs";
+import DropdownComponent from "./DropdownComponent";
 import Blog from "./Blog";
 import Learn from "./Learn";
 import Shop from "./Shop";
 import "./Navbar.scss";
-import DropdownComponent from "./DropdownComponent";
 
-const menu_list = ["Shop", "How-To's", "Gifts", "Learn", "Blog", "About"];
+const MENU_LIST = ["Shop", "How-To's", "Gifts", "Learn", "Blog", "About"];
 
 class Navbar extends Component {
   constructor() {
@@ -32,12 +32,11 @@ class Navbar extends Component {
           <div className="header">
             <img src={logo} alt="logo" />
             <ul>
-              {menu_list.map((menu, idx) => (
+              {MENU_LIST.map((menu, idx) => (
                 <li className="navText" key={idx}>
                   <button
                     className="dropBtn"
                     onClick={() => this.openDropdown(idx + 1)}
-                    // onClick={() => console.log(idx + 1)}
                   >
                     {menu}
                   </button>
