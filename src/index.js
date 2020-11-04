@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Routes from "./Routes";
-import "../src/Styles/reset.scss";
+import ProductDetails from "./Pages/ProductDetails/ProductDetails";
+import Cart from "./Components/Cart/Cart";
 import "../src/Styles/common.scss";
+import "../src/Styles/reset.scss";
 
 ReactDOM.render(
-  <Routes />,
+  <ProductDetails />,
 
   document.getElementById("root")
 );
