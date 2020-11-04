@@ -1,0 +1,47 @@
+{
+  "message": "product found",
+  "foundProduct": {
+    "id": 1,
+    "name": "Tasty Plastic Shirt",
+    "price": 20,
+    "image_url": "https://images.velog.io/images/seohyang-lab/post/f49077a4-553b-4889-ade7-9af904fe3176/test10.png",
+    "product_type": "coffee",
+    "sales_amount": 2134,
+    "created_at": "2020-12-11T14:30:39.000Z",
+    "updated_at": null,
+    "deleted_at": null,
+    "coffees": {
+      "id": 1,
+      "taste": "Roasty & Smoky",
+      "roasting_schedule": "Thursday",
+      "process": "Washed",
+      "elevation": "1400",
+      "variety": "Caturra, Bourbon, Typica",
+      "note": "The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients",
+      "roast_level": "Medium",
+      "coffee_tastes_like": "Nut",
+      "country": "Peru",
+      "region": "Asia",
+      "sub_region": "Kentucky",
+      "type": "Single Origins",
+      "bag_weight": "8 oz.",
+      "available_ground": 1,
+      "cold_brew": 1,
+      "decaf": 0,
+      "espresso": 1,
+      "roaster_id": 8,
+      "product_id": 1,
+      "roasters": {
+        "id": 8,
+        "name": "Larry",
+        "image_url": "https://images.velog.io/images/seohyang-lab/post/8f2ade1c-b1f5-4290-91cc-af7b57ba1baf/rodeo.png",
+        "location": "Mitchellmouth",
+        "fun_fact": "Advanced neutral frame",
+        "created_at": "2020-11-05T22:35:47.000Z",
+        "updated_at": null,
+        "deleted_at": null,
+        "region_id": 2
+      }
+    }
+  }
+}

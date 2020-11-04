@@ -1,0 +1,497 @@
+@import "../../Styles/common.scss";
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .productDetailsMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 72px;
+
+    // @media (min-width: 992px) {
+    //   .productImage {
+    //     height: 760px;
+    //     width: 800px;
+    //     img {
+    //       width: 90%;
+    //       z-index: -1;
+    //     }
+    //   }
+    // }
+
+    @media (min-width: 768px) {
+      .productImage {
+        width: 620px;
+        img {
+          width: 90%;
+        }
+      }
+    }
+
+    .descriptionWrapper {
+      max-width: 330px;
+      width: 100%;
+      padding-bottom: 28px;
+      font-size: 14px;
+      line-height: 1.43;
+
+      .titleRoastery {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        line-height: 1.3333;
+        font: $subtitle-font;
+      }
+      .titleProductName {
+        margin-bottom: 15px;
+        font: $heading-font;
+        line-height: 1.125;
+      }
+      .productDescription {
+        margin-bottom: 29px;
+        font: $body-font;
+        line-height: 1.5;
+      }
+
+      .price {
+        margin-bottom: 13px;
+        line-height: 1.5;
+        font: $subtitle-font;
+        letter-spacing: -0.04em;
+
+        span {
+          padding: 0px 7px;
+        }
+      }
+      .quantityPicker {
+        font: $label-font;
+        line-height: 1.43;
+
+        .quantityLabel {
+          margin-top: 24px;
+        }
+
+        .quantityWrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          margin-top: 13px;
+          height: 60px;
+          border: $default-border;
+          border-radius: 4px;
+
+          .quantitySubtract {
+            font: 500 26px "Mulish";
+          }
+          .quantitySelected {
+            width: 50%;
+            font: $heading-font;
+            font-size: 26px;
+            text-align: center;
+          }
+          .quantityAdd {
+            font: 500 26px "Mulish";
+          }
+        }
+      }
+      .grindPicker {
+        margin-bottom: 24px;
+
+        .grindLabel {
+          margin-top: 24px;
+          font: $label-font;
+        }
+
+        .grindContainer {
+          display: flex;
+          // align-items: center;
+          // justify-content: space-around;
+          margin-top: 13px;
+          height: 120px;
+          background-color: $default-grey-background;
+          border: $default-border;
+          border-radius: 4px;
+
+          .grindWhole,
+          .grindGround {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            height: 100%;
+            background-color: transparent;
+            font: $subheading-font;
+
+            .selectedOptionValue {
+              margin-top: 3px;
+              background-color: transparent;
+              font-size: 14px;
+              font-weight: 600;
+            }
+          }
+
+          .selectedContainer {
+            background-color: $default-white;
+            border: 1px solid $default-black;
+            border-radius: 4px;
+          }
+        }
+
+        .groundTypeDropdown {
+          position: absolute;
+          width: 335px;
+          margin-left: -10px;
+          margin-top: 10px;
+          border: 1px solid $default-grey;
+          border-radius: 4px;
+          background-color: $default-white;
+          box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.3);
+          z-index: 50;
+
+          .dropdownOptions {
+            display: flex;
+            flex-direction: column;
+
+            .optionItem {
+              height: auto;
+              padding: 22px 0 22px 14px;
+              text-align: left;
+              z-index: 101;
+
+              input {
+                line-height: 1.3333;
+                background-color: transparent;
+              }
+            }
+
+            .optionItem:hover {
+              border-left: 2px solid $default-red;
+              background-color: $default-grey-background;
+
+              input::value:hover {
+                background-color: transparent;
+              }
+            }
+          }
+        }
+      }
+      .addBagBtn {
+        height: 44px;
+        width: 100%;
+        margin-bottom: 12px;
+        margin-top: 16px;
+        background-color: $default-black;
+        color: $default-white;
+        border: 1px solid $default-black;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 700;
+
+        span {
+          padding: 0px 6px;
+          background-color: transparent;
+        }
+
+        .itemPrice {
+          background-color: transparent;
+          color: $default-light-grey;
+          opacity: 0.75;
+        }
+      }
+      .addBagBtn:hover {
+        background-color: rgba(0, 0, 0, 0.85);
+        border: 1px solid rgba(0, 0, 0, 0.85);
+      }
+    }
+  }
+  .productSpecs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 49px 0px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .roastLevelWrapper {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+
+    .scheduleWrapper,
+    .roastLevelWrapper,
+    .tasteWrapper {
+      width: 373px;
+      height: 360px;
+      padding-bottom: 36px;
+      border: $default-border;
+      border-radius: 4px;
+
+      div {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+
+        .specsImageWrapper {
+          align-items: center;
+          height: 144px;
+          width: 144px;
+          margin-bottom: 12px;
+
+          img {
+            object-fit: contain;
+            margin: 0 auto;
+          }
+        }
+
+        .infoTitle {
+          display: flex;
+          align-items: center;
+          margin-bottom: 6px;
+
+          font: $subtitle-font;
+
+          .learnMoreBtn {
+            margin-left: 3px;
+
+            img {
+              height: 18px;
+            }
+          }
+        }
+        .roastLevelLearnMore {
+          position: absolute;
+          top: 180px;
+          width: 335px;
+          margin: 0px 10px;
+          padding: 20px;
+          background-color: $default-white;
+          border-color: rgba(216, 216, 216, 0.4);
+          border-radius: 4px;
+          box-shadow: 0 12px 18px 0 rgba(0, 0, 0, 0.3);
+          z-index: 100;
+
+          .learnMoreTitle {
+            width: 100%;
+            padding-bottom: 18px;
+            padding-top: 3px;
+            border-bottom: $default-border;
+            font: 500 18px "Fira Sans";
+            font-size: 24px;
+            text-align: left;
+          }
+
+          .learnMoreBody {
+            padding-top: 15px;
+            font: $body-font;
+            line-height: 1.43;
+            text-align: left;
+          }
+        }
+
+        .infoSummary {
+          font: $heading-font-small;
+        }
+        .infoSummaryExplained {
+          margin-top: 10px;
+          font: $body-font;
+          line-height: 1.7;
+        }
+      }
+    }
+  }
+
+  .aboutTheRoaster {
+    display: flex;
+    height: 720px;
+    width: 100%;
+
+    .aboutRoasterImage {
+      display: block;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .aboutRoasterText {
+      display: block;
+      width: 100%;
+      background-color: $default-grey-background;
+
+      * {
+        background-color: transparent;
+      }
+
+      .aboutTextWrapper {
+        padding-left: 144px;
+        padding-top: 174px;
+
+        .aboutRoasterHeading {
+          margin-bottom: 72px;
+          margin-left: -50px;
+          font: $heading-font-small;
+        }
+
+        .locationInfo {
+          position: relative;
+
+          .iconWrapper {
+            position: absolute;
+            left: -65px;
+          }
+          .aboutInfoText {
+            width: 260px;
+
+            .factLabel {
+              margin-bottom: 5px;
+              line-height: 1.78;
+              font: $subtitle-font;
+            }
+            .factSummary {
+              padding-right: 70px;
+              font: $body-font;
+              line-height: 32px;
+            }
+          }
+        }
+
+        .funfactInfo {
+          position: relative;
+          margin-top: 50px;
+
+          .iconWrapper {
+            position: absolute;
+            left: -65px;
+            width: 18px;
+          }
+          .aboutInfoText {
+            .factLabel {
+              margin-bottom: 5px;
+              line-height: 1.78;
+              font: $subtitle-font;
+            }
+            .factSummary {
+              padding-right: 70px;
+              font: $body-font;
+              line-height: 2;
+            }
+          }
+        }
+
+        .shopRoasterBtn {
+          margin-top: 50px;
+          font: $subtitle-font;
+
+          button {
+            span {
+              padding: 0px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .moreDetails {
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px;
+    padding: 0 60px;
+    margin: 0 auto;
+
+    .detailsHeading {
+      margin-top: 120px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid $default-black;
+      font: $heading-font-small;
+    }
+
+    .coffeeFactsContainer {
+      display: block;
+      margin-right: 10px;
+
+      .coffeeNameHeading {
+        margin-top: 42px;
+        margin-bottom: 20px;
+        margin-top: 42px;
+      }
+
+      .coffeeFactsBody {
+        display: inline-flex;
+        flex-wrap: wrap;
+        max-width: 768px;
+
+        .coffeeProcess,
+        .coffeeSubRegion,
+        .coffeeProducer,
+        .coffeeElevation,
+        .coffeeVariety {
+          display: flex;
+          max-width: 100%;
+          margin-right: 35px;
+          margin-bottom: 20px;
+          padding-left: 6px;
+
+          div {
+            margin-right: 12px;
+            img {
+              height: 45px;
+            }
+          }
+
+          .coffeeFactsText {
+            .factsCategory {
+              line-height: 1.43;
+              margin-bottom: 3px;
+              font: $label-font-bold;
+            }
+            div {
+              font: $body-font;
+              line-height: 1.43;
+            }
+          }
+        }
+      }
+    }
+
+    .roastersNotesContainer {
+      border-bottom: $default-border;
+
+      .roastersNotesHeading {
+        margin-top: 42px;
+        margin-bottom: 27px;
+        font: $subheading-font;
+      }
+
+      .roastersNotesBody {
+        width: 50%;
+        padding-bottom: 72px;
+        font: $body-font;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .similarCoffeesContainer {
+    padding-top: 60px;
+
+    .similarCoffeesHeading {
+      text-align: center;
+      margin-bottom: 60px;
+      font: $heading-font-small;
+    }
+  }
+}
