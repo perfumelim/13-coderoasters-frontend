@@ -1,3 +1,13 @@
+* {
+  text-decoration: none;
+  font-family: Mulish, "Fira Sans", sans-serif;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: rgb(255, 255, 255);
+}
+
 html,
 body,
 div,
@@ -83,7 +93,6 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
 }
