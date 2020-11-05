@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import "../CardList/CardList.scss";
+import { withRouter } from "react-router-dom";
 
 class Card extends Component {
   render() {
-    const { img, taste, company, name, price } = this.props;
+    const { img, taste, company, name, price, id } = this.props;
     return (
-      <div className="cardContainer">
+      <div
+        onClick={() => this.props.history.push(`/ProductDetails/${id}`)}
+        className="cardContainer"
+      >
         <div className="imgContainer">
           <img src={img} alt="product_pic" />
         </div>
@@ -22,4 +26,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default withRouter(Card);
