@@ -1,0 +1,257 @@
+{
+  "message": "coffee list found",
+  "filteredCoffeeList": [
+    {
+      "id": 1,
+      "name": "Tasty Plastic Shirt",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/f49077a4-553b-4889-ade7-9af904fe3176/test10.png",
+      "coffees": {
+        "id": 1,
+        "taste": "Roasty & Smoky",
+        "roasters": {
+          "id": 8,
+          "name": "Larry"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Handmade Rubber Pizza",
+      "price": 17.35,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/5096b327-b7e5-40f4-8cd7-613b533747af/test9.png",
+      "coffees": {
+        "id": 2,
+        "taste": "Subtle & Delicate",
+        "roasters": {
+          "id": 5,
+          "name": "Asia"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Practical Soft Gloves",
+      "price": 18.8,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/a92bcd42-a8b9-4fe5-9552-6d3466bdc564/test21.png",
+      "coffees": {
+        "id": 3,
+        "taste": "Subtle & Delicate",
+        "roasters": {
+          "id": 10,
+          "name": "Consuelo"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Tasty Steel Chips",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/c0d9f551-b766-4d7f-9523-5ac8bf7aa114/test25.png",
+      "coffees": {
+        "id": 4,
+        "taste": "Sweet & Tart",
+        "roasters": {
+          "id": 4,
+          "name": "Princess"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Fantastic Metal Soap",
+      "price": 17.35,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/5096b327-b7e5-40f4-8cd7-613b533747af/test9.png",
+      "coffees": {
+        "id": 5,
+        "taste": "Sweet & Tart",
+        "roasters": {
+          "id": 14,
+          "name": "Ted"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Tasty Fresh Shirt",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/b9bae63d-2fd9-4be8-92c2-e774b58c50b0/test12.png",
+      "coffees": {
+        "id": 6,
+        "taste": "Sweet & Tart",
+        "roasters": {
+          "id": 17,
+          "name": "Santa"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Licensed Soft Chips",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/172d0fea-8b3f-484f-a261-e41a5158b3fe/test7.png",
+      "coffees": {
+        "id": 7,
+        "taste": "Roasty & Smoky",
+        "roasters": {
+          "id": 3,
+          "name": "Laila"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Refined Soft Cheese",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/5ccc1df6-bb5e-4833-a6eb-5d0e7a3f97a4/test24.png",
+      "coffees": {
+        "id": 8,
+        "taste": "Comforting & Rich",
+        "roasters": {
+          "id": 15,
+          "name": "Abel"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Licensed Steel Gloves",
+      "price": 24.15,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/ada0a812-80bd-4387-baf1-3c4ea2c6bd94/test3.png",
+      "coffees": {
+        "id": 9,
+        "taste": "Sweet & Tart",
+        "roasters": {
+          "id": 6,
+          "name": "Amira"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "name": "Licensed Granite Shoes",
+      "price": 17.35,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/5ccc1df6-bb5e-4833-a6eb-5d0e7a3f97a4/test24.png",
+      "coffees": {
+        "id": 10,
+        "taste": "Sweet & Tart",
+        "roasters": {
+          "id": 7,
+          "name": "Ezequiel"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "name": "Practical Soft Chicken",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/3a7a257a-9078-457b-bbc6-a2cb53992738/test22.png",
+      "coffees": {
+        "id": 11,
+        "taste": "Balanced & Fruity",
+        "roasters": {
+          "id": 2,
+          "name": "Woodrow"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "name": "Practical Plastic Pants",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/1c752b1f-39e8-4306-ac07-b6d72bc92b1d/test8.png",
+      "coffees": {
+        "id": 12,
+        "taste": "Roasty & Smoky",
+        "roasters": {
+          "id": 15,
+          "name": "Abel"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Handcrafted Steel Ball",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/b6c91f2f-048e-4643-b2f8-a5cabd5afe35/coldbrewbags.png",
+      "coffees": {
+        "id": 13,
+        "taste": "Comforting & Rich",
+        "roasters": {
+          "id": 1,
+          "name": "Chasity"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "name": "Handcrafted Wooden Bacon",
+      "price": 20,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/5096b327-b7e5-40f4-8cd7-613b533747af/test9.png",
+      "coffees": {
+        "id": 14,
+        "taste": "Subtle & Delicate",
+        "roasters": {
+          "id": 9,
+          "name": "Oleta"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "name": "Intelligent Metal Cheese",
+      "price": 18.8,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/31f11df8-3aee-4e89-bb1c-a27c5f8e3bca/test13.png",
+      "coffees": {
+        "id": 15,
+        "taste": "Subtle & Delicate",
+        "roasters": {
+          "id": 19,
+          "name": "Jane"
+        }
+      }
+    },
+    {
+      "id": 16,
+      "name": "Unbranded Rubber Chicken",
+      "price": 18.8,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/ada0a812-80bd-4387-baf1-3c4ea2c6bd94/test3.png",
+      "coffees": {
+        "id": 16,
+        "taste": "Sweet & Tart",
+        "roasters": {
+          "id": 19,
+          "name": "Jane"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "name": "Incredible Cotton Car",
+      "price": 18.8,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/a92bcd42-a8b9-4fe5-9552-6d3466bdc564/test21.png",
+      "coffees": {
+        "id": 17,
+        "taste": "Balanced & Fruity",
+        "roasters": {
+          "id": 17,
+          "name": "Santa"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "name": "Tasty Granite Fish",
+      "price": 17.35,
+      "image_url": "https://images.velog.io/images/seohyang-lab/post/31f11df8-3aee-4e89-bb1c-a27c5f8e3bca/test13.png",
+      "coffees": {
+        "id": 18,
+        "taste": "Sweet & Smooth",
+        "roasters": {
+          "id": 4,
+          "name": "Princess"
+        }
+      }
+    }
+  ]
+}

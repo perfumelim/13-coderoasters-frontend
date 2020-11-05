@@ -1,0 +1,523 @@
+{
+  "message": "filter list found",
+  "foundOptions": [
+    {
+      "id": 1,
+      "name": "Roast Level",
+      "filter_options": [
+        {
+          "id": 1,
+          "name": "Light",
+          "filter_category_id": 1
+        },
+        {
+          "id": 2,
+          "name": "Light-Medium",
+          "filter_category_id": 1
+        },
+        {
+          "id": 3,
+          "name": "Medium",
+          "filter_category_id": 1
+        },
+        {
+          "id": 4,
+          "name": "Medium-Dark",
+          "filter_category_id": 1
+        },
+        {
+          "id": 5,
+          "name": "Dark",
+          "filter_category_id": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Coffee Tastes Like",
+      "filter_options": [
+        {
+          "id": 6,
+          "name": "Berry Fruit",
+          "filter_category_id": 2
+        },
+        {
+          "id": 7,
+          "name": "Brown Sugar",
+          "filter_category_id": 2
+        },
+        {
+          "id": 8,
+          "name": "Citrus",
+          "filter_category_id": 2
+        },
+        {
+          "id": 9,
+          "name": "Earthiness",
+          "filter_category_id": 2
+        },
+        {
+          "id": 10,
+          "name": "Florais",
+          "filter_category_id": 2
+        },
+        {
+          "id": 11,
+          "name": "Fresh Herb",
+          "filter_category_id": 2
+        },
+        {
+          "id": 12,
+          "name": "Milk Chocolate",
+          "filter_category_id": 2
+        },
+        {
+          "id": 13,
+          "name": "Nut",
+          "filter_category_id": 2
+        },
+        {
+          "id": 14,
+          "name": "Ripe Fruit",
+          "filter_category_id": 2
+        },
+        {
+          "id": 15,
+          "name": "Roastiness",
+          "filter_category_id": 2
+        },
+        {
+          "id": 16,
+          "name": "Savoriness",
+          "filter_category_id": 2
+        },
+        {
+          "id": 17,
+          "name": "Spice",
+          "filter_category_id": 2
+        },
+        {
+          "id": 18,
+          "name": "Sweet Vanilla",
+          "filter_category_id": 2
+        },
+        {
+          "id": 19,
+          "name": "Tropical Fruit",
+          "filter_category_id": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Price",
+      "filter_options": [
+        {
+          "id": 20,
+          "name": "Less than $15",
+          "filter_category_id": 3
+        },
+        {
+          "id": 21,
+          "name": "$15 - $18",
+          "filter_category_id": 3
+        },
+        {
+          "id": 22,
+          "name": "$18- $22",
+          "filter_category_id": 3
+        },
+        {
+          "id": 23,
+          "name": "More than $22",
+          "filter_category_id": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Region",
+      "filter_options": [
+        {
+          "id": 24,
+          "name": "Africa",
+          "filter_category_id": 4
+        },
+        {
+          "id": 25,
+          "name": "Asia",
+          "filter_category_id": 4
+        },
+        {
+          "id": 26,
+          "name": "Central America",
+          "filter_category_id": 4
+        },
+        {
+          "id": 27,
+          "name": "North America",
+          "filter_category_id": 4
+        },
+        {
+          "id": 28,
+          "name": "South America",
+          "filter_category_id": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Country",
+      "filter_options": [
+        {
+          "id": 29,
+          "name": "Bolivia",
+          "filter_category_id": 5
+        },
+        {
+          "id": 30,
+          "name": "Brazil",
+          "filter_category_id": 5
+        },
+        {
+          "id": 31,
+          "name": "Burundi",
+          "filter_category_id": 5
+        },
+        {
+          "id": 32,
+          "name": "Colombia",
+          "filter_category_id": 5
+        },
+        {
+          "id": 33,
+          "name": "Congo",
+          "filter_category_id": 5
+        },
+        {
+          "id": 34,
+          "name": "Costa Rica",
+          "filter_category_id": 5
+        },
+        {
+          "id": 35,
+          "name": "East Timor",
+          "filter_category_id": 5
+        },
+        {
+          "id": 36,
+          "name": "Ecuador",
+          "filter_category_id": 5
+        },
+        {
+          "id": 37,
+          "name": "El Salvador",
+          "filter_category_id": 5
+        },
+        {
+          "id": 38,
+          "name": "Ethiopia",
+          "filter_category_id": 5
+        },
+        {
+          "id": 39,
+          "name": "Guatemala",
+          "filter_category_id": 5
+        },
+        {
+          "id": 40,
+          "name": "Honduras",
+          "filter_category_id": 5
+        },
+        {
+          "id": 41,
+          "name": "Indonesia",
+          "filter_category_id": 5
+        },
+        {
+          "id": 42,
+          "name": "Kenya",
+          "filter_category_id": 5
+        },
+        {
+          "id": 43,
+          "name": "Malawi",
+          "filter_category_id": 5
+        },
+        {
+          "id": 44,
+          "name": "Mexico",
+          "filter_category_id": 5
+        },
+        {
+          "id": 45,
+          "name": "Nicaragua",
+          "filter_category_id": 5
+        },
+        {
+          "id": 46,
+          "name": "Papua New Guinea",
+          "filter_category_id": 5
+        },
+        {
+          "id": 47,
+          "name": "Peru",
+          "filter_category_id": 5
+        },
+        {
+          "id": 48,
+          "name": "Rwanda",
+          "filter_category_id": 5
+        },
+        {
+          "id": 49,
+          "name": "Sulawesi",
+          "filter_category_id": 5
+        },
+        {
+          "id": 50,
+          "name": "Sumatra",
+          "filter_category_id": 5
+        },
+        {
+          "id": 51,
+          "name": "Tanzania",
+          "filter_category_id": 5
+        },
+        {
+          "id": 52,
+          "name": "Uganda",
+          "filter_category_id": 5
+        },
+        {
+          "id": 53,
+          "name": "Various",
+          "filter_category_id": 5
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Roaster",
+      "filter_options": [
+        {
+          "id": 54,
+          "name": "Little",
+          "filter_category_id": 6
+        },
+        {
+          "id": 55,
+          "name": "Dickinson",
+          "filter_category_id": 6
+        },
+        {
+          "id": 56,
+          "name": "Hills LLC",
+          "filter_category_id": 6
+        },
+        {
+          "id": 57,
+          "name": "Rempel",
+          "filter_category_id": 6
+        },
+        {
+          "id": 58,
+          "name": "Jaskolski",
+          "filter_category_id": 6
+        },
+        {
+          "id": 59,
+          "name": "Ledner",
+          "filter_category_id": 6
+        },
+        {
+          "id": 60,
+          "name": "Hickle",
+          "filter_category_id": 6
+        },
+        {
+          "id": 61,
+          "name": "Altenwerth",
+          "filter_category_id": 6
+        },
+        {
+          "id": 62,
+          "name": "Raynor",
+          "filter_category_id": 6
+        },
+        {
+          "id": 63,
+          "name": "Corkery",
+          "filter_category_id": 6
+        },
+        {
+          "id": 64,
+          "name": "Lueilwitz",
+          "filter_category_id": 6
+        },
+        {
+          "id": 65,
+          "name": "O’Kon",
+          "filter_category_id": 6
+        },
+        {
+          "id": 66,
+          "name": "Doyle",
+          "filter_category_id": 6
+        },
+        {
+          "id": 67,
+          "name": "Schultz",
+          "filter_category_id": 6
+        },
+        {
+          "id": 68,
+          "name": "Blanda",
+          "filter_category_id": 6
+        },
+        {
+          "id": 69,
+          "name": "Roob Inc",
+          "filter_category_id": 6
+        },
+        {
+          "id": 70,
+          "name": "Ward",
+          "filter_category_id": 6
+        },
+        {
+          "id": 71,
+          "name": "Schulist",
+          "filter_category_id": 6
+        },
+        {
+          "id": 72,
+          "name": "Crist Inc",
+          "filter_category_id": 6
+        },
+        {
+          "id": 73,
+          "name": "O’Keefe",
+          "filter_category_id": 6
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Type",
+      "filter_options": [
+        {
+          "id": 74,
+          "name": "Blends",
+          "filter_category_id": 7
+        },
+        {
+          "id": 75,
+          "name": "Single Origins",
+          "filter_category_id": 7
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Bag Weight",
+      "filter_options": [
+        {
+          "id": 76,
+          "name": "8 oz.",
+          "filter_category_id": 8
+        },
+        {
+          "id": 77,
+          "name": "10 oz.",
+          "filter_category_id": 8
+        },
+        {
+          "id": 78,
+          "name": "12 oz.",
+          "filter_category_id": 8
+        },
+        {
+          "id": 79,
+          "name": "5 lb.",
+          "filter_category_id": 8
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Available Ground",
+      "filter_options": [
+        {
+          "id": 80,
+          "name": "Available Ground",
+          "filter_category_id": 9
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Process",
+      "filter_options": [
+        {
+          "id": 81,
+          "name": "Honey",
+          "filter_category_id": 10
+        },
+        {
+          "id": 82,
+          "name": "Natural/Dry Processed",
+          "filter_category_id": 10
+        },
+        {
+          "id": 83,
+          "name": "Pulped Natural",
+          "filter_category_id": 10
+        },
+        {
+          "id": 84,
+          "name": "Pulped Natural/Honey",
+          "filter_category_id": 10
+        },
+        {
+          "id": 85,
+          "name": "Washed",
+          "filter_category_id": 10
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Cold Brew",
+      "filter_options": [
+        {
+          "id": 86,
+          "name": "Cold Brew",
+          "filter_category_id": 11
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Decaf",
+      "filter_options": [
+        {
+          "id": 87,
+          "name": "Decaf",
+          "filter_category_id": 12
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Espresso",
+      "filter_options": [
+        {
+          "id": 88,
+          "name": "Espresso",
+          "filter_category_id": 13
+        }
+      ]
+    }
+  ]
+}
