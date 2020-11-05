@@ -13,7 +13,7 @@ class AsideItems extends Component {
   }
 
   componentDidMount() {
-    fetch("/Data/CategoryList.json")
+    fetch(`${KM_URL}/products/options`)
       .then((res) => res.json())
       .then((res) => this.setState({ menuList: res }));
   }
@@ -23,8 +23,7 @@ class AsideItems extends Component {
       {
         queryString: [...this.state.queryString, query],
       },
-      () =>
-        this.props.history.push(`/coffee?${this.state.queryString.join("")}`)
+      () => this.props.history.push(`?${this.state.queryString.join("")}`)
     );
   };
 
@@ -36,8 +35,7 @@ class AsideItems extends Component {
       {
         queryString: findTargetword,
       },
-      () =>
-        this.props.history.push(`/coffee?${this.state.queryString.join("")}`)
+      () => this.props.history.push(`?${this.state.queryString.join("")}`)
     );
   };
 

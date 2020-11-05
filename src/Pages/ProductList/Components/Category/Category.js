@@ -5,7 +5,8 @@ import "./Category.scss";
 
 class Category extends Component {
   resetAllItems = () => {
-    this.props.history.push("/coffee");
+    this.props.history.push("/productlist");
+    window.location.reload();
   };
 
   render() {

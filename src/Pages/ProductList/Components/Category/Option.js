@@ -107,7 +107,7 @@ class Option extends Component {
   };
 
   render() {
-    const { isClicked, filterOptions } = this.state;
+    const { isClicked, filterOptions, hidden } = this.state;
     const { name } = this.props;
     return (
       <div className="item">
@@ -144,7 +144,7 @@ class Option extends Component {
                 <label>{option.name}</label>
               </div>
             ))}
-            {this.state.hidden && (
+            {hidden && (
               <div className="seeAllBox" onClick={this.showHidden}>
                 See All
               </div>
