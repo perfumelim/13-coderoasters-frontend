@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Cart from "../../Components/Cart/Cart";
+import Navbar from "../../Components/Navbar/Navbar";
 import "./ProductDetails.scss";
 
 const APIProductDetails = "http://10.58.1.167:8000/products/1";
@@ -21,6 +22,27 @@ export default class ProductDetails extends React.Component {
       isGround: false,
       itemsInCart: [],
     };
+  }
+
+  componentDidMount() {
+    fetch(APIProductDetails)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("product details: ", res.foundProduct.coffees);
+        this.setState({
+          productSummary: res.foundProduct,
+          coffee: res.foundProduct.coffees,
+          roaster: res.foundProduct.coffees.roasters,
+        });
+      });
+    fetch("/Data/GroundType.json")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("dropdown groundlist: ", res.foundGroundList);
+        this.setState({
+          groundTypes: res.foundGroundList,
+        });
+      });
   }
 
   handleIncrementQuantity = () => {
@@ -137,27 +159,6 @@ export default class ProductDetails extends React.Component {
       });
   };
 
-  componentDidMount() {
-    fetch(APIProductDetails)
-      .then((res) => res.json())
-      .then((res) => {
-        console.log("product details: ", res.foundProduct.coffees);
-        this.setState({
-          productSummary: res.foundProduct,
-          coffee: res.foundProduct.coffees,
-          roaster: res.foundProduct.coffees.roasters,
-        });
-      });
-    fetch("/Data/GroundType.json")
-      .then((res) => res.json())
-      .then((res) => {
-        console.log("dropdown groundlist: ", res.foundGroundList);
-        this.setState({
-          groundTypes: res.foundGroundList,
-        });
-      });
-  }
-
   render() {
     console.log("thirdly: ", this.state.productSummary);
     console.log("coffee", this.state.coffee, "roaster", this.state.roaster);
@@ -180,6 +181,7 @@ export default class ProductDetails extends React.Component {
         {showCart ? (
           <Cart showCart={showCart} handleHideCart={this.handleHideCart} />
         ) : null}
+        <Navbar />
         <section className="productDetailsMain">
           <div className="productImage">
             <img src={productSummary.image_url} alt="제품이미지" />
