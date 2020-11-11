@@ -7,6 +7,14 @@ $default-dark-grey: rgb(148, 148, 148);
 $default-light-grey: rgb(233, 233, 233);
 $default-red: rgb(245, 60, 50);
 $default-border: 1px solid rgb(233, 233, 233);
+$default-grey-background: rgb(249, 249, 249);
+$body-font: 450 15px "Mulish";
+$heading-font: 700 60px "Fira Sans";
+$subtitle-font: 700 16px "Mulish";
+$label-font: 550 14px "Mulish";
+$label-font-bold: 700 14px "Mulish";
+$heading-font-small: 600 32px "Fira Sans";
+$subheading-font: 700 22px "Fira Sans";
 
 @mixin flex-center {
   display: flex;
