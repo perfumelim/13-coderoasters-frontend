@@ -56,7 +56,11 @@ class Navbar extends Component {
                     <BsPeopleCircle size="25px" />
                   </div>
                 </li>
-                <li data-hover="Cart" className="slideList">
+                <li
+                  data-hover="Cart"
+                  className="slideList"
+                  onClick={this.props.handleShowCart}
+                >
                   <div>
                     <BsBag size="25px" />
                   </div>
