@@ -1,0 +1,33 @@
+{
+  "message": "ground list found",
+  "foundGroundList": [
+    {
+      "id": 1,
+      "name": "Automatic Drip"
+    },
+    {
+      "id": 2,
+      "name": "French Press"
+    },
+    {
+      "id": 3,
+      "name": "Chemex"
+    },
+    {
+      "id": 4,
+      "name": "Pour Over"
+    },
+    {
+      "id": 5,
+      "name": "Espresso"
+    },
+    {
+      "id": 6,
+      "name": "AeroPress"
+    },
+    {
+      "id": 7,
+      "name": "Precolator / Cold Brew"
+    }
+  ]
+}
