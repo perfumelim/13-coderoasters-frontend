@@ -12,10 +12,10 @@ export class Login extends Component {
       firstNameValue: "",
       lastNameValue: "",
       emailValue: "",
-      // isEmailValid: false,
+      // isEmailValid: false,(validation 구현을 위해 남겨놓은 주석입니다.)
       mobileNumValue: "",
       pwValue: "",
-      // isPwValueValid: false,
+      // isPwValueValid: false,(validation 구현을 위해 남겨놓은 주석입니다.)
     };
   }
 
@@ -26,7 +26,7 @@ export class Login extends Component {
   handleInputValue = (inValue) => {
     this.setState({ [inValue.target.name]: inValue.target.value });
   };
-
+  //validation 구현을 위해 남겨놓은 주석입니다.
   // valiDateEmail = (emailValue) => {
   //   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -144,7 +144,6 @@ export class Login extends Component {
                       value={firstNameValue}
                       onChange={this.handleInputValue}
                     />
-
                     <input
                       className="nameBox"
                       type="text"
@@ -161,12 +160,8 @@ export class Login extends Component {
                   placeholder="Email*"
                   name="emailValue"
                   value={emailValue}
-                  // onChange={(e) => this.valiDateEmail(e.target.value)}
                   onChange={this.handleInputValue}
                 />
-                <span onChange={this.state.isEmailValid === false}>
-                  Email invalid.
-                </span>
                 {activeId === 1 && (
                   <input
                     className="mobileNumBox"
@@ -212,7 +207,7 @@ export class Login extends Component {
             </div>
           </div>
         </div>
-        {/* ) : null} */}
+        ) : null}
       </>
     );
   }
