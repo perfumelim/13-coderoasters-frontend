@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import Cart from "../../Components/Cart/Cart";
-import Navbar from "../../Components/Navbar/Navbar";
+import Card from "../ProductList/Components/CardList/Card";
 import "./ProductDetails.scss";
+import "../ProductList/Components/CardList/CardList.scss";
 
-const APIProductDetails = "http://10.58.1.167:8000/products/1";
-const APIAddToCart = "http://10.58.4.20:8000/cart";
+const APIProductDetails = "http://10.58.1.167:8000/products";
+const APIGroundTypes = "http://10.58.1.167:8000/products/grounds";
+const APIAddToCart = "http://10.58.1.167:8000/cart";
+const APISimilarCoffees = "http://10.58.1.167:8000/products/similar";
 
 export default class ProductDetails extends React.Component {
   constructor() {
     super();
-    this.handleHideCart = this.handleHideCart.bind(this);
     this.state = {
       productSummary: {},
       coffee: {},
@@ -20,27 +22,37 @@ export default class ProductDetails extends React.Component {
       groundTypeSelected: { id: 8 },
       showCart: false,
       isGround: false,
-      itemsInCart: [],
+      hideDropdown: false,
+      similarCoffees: [],
     };
   }
 
   componentDidMount() {
-    fetch(APIProductDetails)
+    console.log(this.props, "4++4+4+4+4+4+4+4+4+4+4+");
+    fetch(APIProductDetails + `/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => {
-        console.log("product details: ", res.foundProduct.coffees);
+        // console.log("product details: 000000000000", res);
         this.setState({
           productSummary: res.foundProduct,
           coffee: res.foundProduct.coffees,
           roaster: res.foundProduct.coffees.roasters,
         });
       });
-    fetch("/Data/GroundType.json")
+    fetch(APIGroundTypes)
       .then((res) => res.json())
       .then((res) => {
         console.log("dropdown groundlist: ", res.foundGroundList);
         this.setState({
           groundTypes: res.foundGroundList,
+        });
+      });
+    fetch(APISimilarCoffees + `/${this.props.match.params.id}`)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log("SIMILAR COFFEES...................: ", res.similarCoffees);
+        this.setState({
+          similarCoffees: res.similarCoffees,
         });
       });
   }
@@ -84,6 +96,7 @@ export default class ProductDetails extends React.Component {
   handleSelectGround = () => {
     this.setState({
       isGround: true,
+      hideDropdown: false,
     });
   };
 
@@ -95,16 +108,17 @@ export default class ProductDetails extends React.Component {
   };
 
   handleGroundType = (obj) => {
-    // const { name, value } = e.target;
+    const { hideDropdown } = this.state;
     this.setState({
       groundTypeSelected: obj,
-      hideDropdown: true,
+      hideDropdown: !hideDropdown,
     });
   };
 
   handleShowCart = () => {
+    const { showCart } = this.state;
     this.setState({
-      showCart: true,
+      showCart: !showCart,
     });
   };
 
@@ -114,9 +128,6 @@ export default class ProductDetails extends React.Component {
     });
   };
 
-  //local 저장된 토큰 getItem, 변수에 담기 header
-  //로그인 하세요  시츄에이션
-  //콘솔로그 확인
   componentDidUpdate(prevProps, prevState) {
     if (prevState.isGround !== this.state.isGround && !this.state.isGround) {
       this.setState({ groundTypeSelected: { id: 8 } }, () =>
@@ -124,12 +135,10 @@ export default class ProductDetails extends React.Component {
       );
     }
   }
+
   handleAddtoCart = () => {
     const { productSummary, groundTypeSelected, quantityCount } = this.state;
 
-    // this.handleShowCart();
-
-    // const token = localStorage.getItem("user_token");
     console.log("=====================");
     console.log(productSummary.id, groundTypeSelected.id, quantityCount);
 
@@ -138,7 +147,7 @@ export default class ProductDetails extends React.Component {
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzEsImlhdCI6MTYwNTA4NDIxMSwiZXhwIjoxNjA1MTcwNjExfQ.Rv7KuMXVho_zsEO_CNxt-YCUcOolbjGrKlRaY7lP1po",
+          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIsImlhdCI6MTYwNTE5OTE4NSwiZXhwIjoxNjA1Mjg1NTg1fQ.DdlwCm2fx2_gHFRRnEjekz3RPoS6sXDAMWshXr5mZUM",
       },
       body: JSON.stringify({
         productId: productSummary.id,
@@ -152,7 +161,7 @@ export default class ProductDetails extends React.Component {
         console.log("백앤드에서 오는 응답 메세지: ", response);
 
         if (response.message === "success") {
-          alert("장바구니에 상품을 담았습니다!");
+          this.handleShowCart();
         } else {
           alert("로그인을 먼저 해주세요!");
         }
@@ -174,14 +183,18 @@ export default class ProductDetails extends React.Component {
       hideDropdown,
       showCart,
       isGround,
+      similarCoffees,
     } = this.state;
 
     return (
       <div className="productDetails">
-        {showCart ? (
-          <Cart showCart={showCart} handleHideCart={this.handleHideCart} />
+        {showCart === true ? (
+          <Cart
+            showCart={showCart}
+            handleHideCart={this.handleHideCart}
+            handleShowCart={this.handleShowCart}
+          />
         ) : null}
-        <Navbar />
         <section className="productDetailsMain">
           <div className="productImage">
             <img src={productSummary.image_url} alt="제품이미지" />
@@ -273,7 +286,9 @@ export default class ProductDetails extends React.Component {
               <span>
                 {""}|{""}
               </span>
-              <span className="itemPrice">PAY ${productSummary.price}</span>
+              <span className="itemPrice">
+                PAY ${quantityCount * productSummary.price}
+              </span>
             </button>
           </div>
         </section>
@@ -281,7 +296,7 @@ export default class ProductDetails extends React.Component {
           <div className="scheduleWrapper">
             <div>
               <div className="specsImageWrapper">
-                <img src="Images/roasting-icon.svg" alt="icon" />
+                <img src="/Images/roasting-icon.svg" alt="icon" />
               </div>
               <p className="infoTitle">Roasting Schedule</p>
               <p className="infoSummary">
@@ -292,12 +307,12 @@ export default class ProductDetails extends React.Component {
           <div className="roastLevelWrapper">
             <div>
               <div className="specsImageWrapper">
-                <img src="Images/roastlevel-icon.svg" alt="icon" />
+                <img src="/Images/roastlevel-icon.svg" alt="icon" />
               </div>
               <p className="infoTitle">
                 Trade Roast Level
                 <button onClick={this.handleLearnMore} className="learnMoreBtn">
-                  <img src="Images/learn-more-icon.svg" />
+                  <img src="/Images/learn-more-icon.svg" />
                 </button>
               </p>
               <p className="infoSummary">{coffee && coffee.roast_level}</p>
@@ -319,7 +334,7 @@ export default class ProductDetails extends React.Component {
           <div className="tasteWrapper">
             <div>
               <div className="specsImageWrapper">
-                <img src="Images/taste-icon.svg" alt="icon" />
+                <img src="/Images/taste-icon.svg" alt="icon" />
               </div>
               <p className="infoTitle">Taste</p>
               <p className="infoSummary">{coffee && coffee.taste}</p>
@@ -335,7 +350,7 @@ export default class ProductDetails extends React.Component {
               <h2 className="aboutRoasterHeading">About the Roaster</h2>
               <div className="locationInfo">
                 <div className="iconWrapper">
-                  <img src="Images/location-icon.svg" alt="location-icon" />
+                  <img src="/Images/location-icon.svg" alt="location-icon" />
                 </div>
                 <div className="aboutInfoText">
                   <p className="factLabel">Location</p>
@@ -344,7 +359,7 @@ export default class ProductDetails extends React.Component {
               </div>
               <div className="funfactInfo">
                 <div className="iconWrapper">
-                  <img src="Images/funfact-icon.svg" alt="funfact-icon" />
+                  <img src="/Images/funfact-icon.svg" alt="funfact-icon" />
                 </div>
                 <div className="aboutInfoText">
                   <p className="factLabel">Fun Fact</p>
@@ -368,7 +383,7 @@ export default class ProductDetails extends React.Component {
             <div className="coffeeFactsBody">
               <div className="coffeeProcess">
                 <div>
-                  <img src="Images/process-icon.svg" alt="icon" />
+                  <img src="/Images/process-icon.svg" alt="icon" />
                 </div>
                 <div className="coffeeFactsText">
                   <div className="factsCategory">Process</div>
@@ -377,7 +392,7 @@ export default class ProductDetails extends React.Component {
               </div>
               <div className="coffeeSubRegion">
                 <div>
-                  <img src="Images/subregion-icon.svg" alt="icon" />
+                  <img src="/Images/subregion-icon.svg" alt="icon" />
                 </div>
                 <div className="coffeeFactsText">
                   <div className="factsCategory">Sub Region</div>
@@ -387,7 +402,7 @@ export default class ProductDetails extends React.Component {
 
               <div className="coffeeElevation">
                 <div>
-                  <img src="Images/elevation-icon.svg" alt="icon" />
+                  <img src="/Images/elevation-icon.svg" alt="icon" />
                 </div>
                 <div className="coffeeFactsText">
                   <div className="factsCategory">Elevation</div>
@@ -396,7 +411,7 @@ export default class ProductDetails extends React.Component {
               </div>
               <div className="coffeeVariety">
                 <div>
-                  <img src="Images/variety-icon.svg" alt="icon" />
+                  <img src="/Images/variety-icon.svg" alt="icon" />
                 </div>
                 <div className="coffeeFactsText">
                   <div className="factsCategory">Variety</div>
@@ -412,6 +427,22 @@ export default class ProductDetails extends React.Component {
         </section>
         <div className="similarCoffeesContainer">
           <div className="similarCoffeesHeading">Similar Coffees</div>
+          <div className="similarCoffeesBody">
+            {similarCoffees &&
+              similarCoffees.map((coffee) => (
+                <div className="cardWrapper">
+                  <Card
+                    id={coffee && coffee.id}
+                    img={coffee && coffee.image_url}
+                    taste={coffee && coffee.coffees.taste}
+                    company={coffee && coffee.company}
+                    name={coffee && coffee.name}
+                    price={coffee && coffee.price}
+                    key={coffee && coffee.id}
+                  />
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     );
