@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "../Login/Login.scss";
 import { Link, withRouter } from "react-router-dom";
-
-const API = "http://10.58.4.20:8000/users/signup";
+import { KM_URL } from "../../config";
+import GoogleLogin from "react-google-login";
 
 export class Login extends Component {
   constructor() {
@@ -47,7 +47,7 @@ export class Login extends Component {
       pwValue,
     } = this.state;
 
-    fetch(API, {
+    fetch(`${KM_URL}/users/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ export class Login extends Component {
   handleLogInClick = (e) => {
     const { emailValue, pwValue } = this.state;
 
-    fetch("http://10.58.4.20:8000/users/login", {
+    fetch(`${KM_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,28 @@ export class Login extends Component {
         if (result.message === "login success!") {
           alert("Login SUCCESS!");
           localStorage.setItem("token", result.token);
-          this.props.history.push("/");
+          this.props.history.push("/1");
+        }
+      });
+  };
+  responseGoogle = (response) => {
+    console.log(response);
+    fetch(`${KM_URL}/users/googlelogin`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token: response.tokenId,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.message === "login success!") {
+          localStorage.setItem("token", result.token);
+          alert("Login SUCCESS!");
+          this.props.showLoginModal();
+          this.props.history.push("/1");
         }
       });
   };
@@ -104,110 +125,121 @@ export class Login extends Component {
     } = this.state;
 
     return (
-      <>
-        {this.props.isOpen ? (
-          <div className="Login">
-            <div className="loginBox">
-              <div className="btnClose">
-                <button onClick={this.props.close}>
-                  <img src="/Images/close-button.png" alt="closebutton" />
-                </button>
-              </div>
-              <div className="accountBox">
-                <button
-                  className={
-                    activeId === 1 ? "accountButtonLine" : "accountButton"
-                  }
-                  onClick={() => this.changeTap(1)}
-                >
-                  Sign Up
-                </button>
-                <button
-                  className={
-                    activeId === 2 ? "accountButtonLine" : "accountButton"
-                  }
-                  onClick={() => this.changeTap(2)}
-                >
-                  Log In
-                </button>
-              </div>
-              <div className="loginContainer">
-                <div className="inputBox">
-                  {activeId === 1 && (
-                    <>
-                      <input
-                        className="nameBox"
-                        type="text"
-                        placeholder="First Name*"
-                        name="firstNameValue"
-                        value={firstNameValue}
-                        onChange={this.handleInputValue}
-                      />
-                      <input
-                        className="nameBox"
-                        type="text"
-                        placeholder="Last Name*"
-                        name="lastNameValue"
-                        value={lastNameValue}
-                        onChange={this.handleInputValue}
-                      />
-                    </>
-                  )}
-                  <input
-                    className="emailBox"
-                    type="text"
-                    placeholder="Email*"
-                    name="emailValue"
-                    value={emailValue}
-                    onChange={this.handleInputValue}
-                  />
-                  {activeId === 1 && (
+      <div>
+        {/* {this.props.isOpen ? ( */}
+        <div className="Login">
+          <div className="loginBox">
+            <div className="btnClose">
+              <button onClick={this.props.showLoginModal}>
+                <img src="/Images/close-button.png" alt="closebutton" />
+              </button>
+            </div>
+            <div className="accountBox">
+              <button
+                className={
+                  activeId === 1 ? "accountButtonLine" : "accountButton"
+                }
+                onClick={() => this.changeTap(1)}
+              >
+                Sign Up
+              </button>
+              <button
+                className={
+                  activeId === 2 ? "accountButtonLine" : "accountButton"
+                }
+                onClick={() => this.changeTap(2)}
+              >
+                Log In
+              </button>
+            </div>
+            <div className="loginContainer">
+              <div className="inputBox">
+                {activeId === 1 && (
+                  <>
                     <input
-                      className="mobileNumBox"
+                      className="nameBox"
                       type="text"
-                      placeholder="Mobile Number*"
-                      name="mobileNumValue"
-                      value={this.state.mobileNumValue}
+                      placeholder="First Name*"
+                      name="firstNameValue"
+                      value={firstNameValue}
                       onChange={this.handleInputValue}
                     />
-                  )}
+                    <input
+                      className="nameBox"
+                      type="text"
+                      placeholder="Last Name*"
+                      name="lastNameValue"
+                      value={lastNameValue}
+                      onChange={this.handleInputValue}
+                    />
+                  </>
+                )}
+                <input
+                  className="emailBox"
+                  type="text"
+                  placeholder="Email*"
+                  name="emailValue"
+                  value={emailValue}
+                  onChange={this.handleInputValue}
+                />
+                {activeId === 1 && (
                   <input
-                    className="psBox"
-                    type="password"
-                    placeholder="Password*"
-                    name="pwValue"
-                    value={pwValue}
+                    className="mobileNumBox"
+                    type="text"
+                    placeholder="Mobile Number*"
+                    name="mobileNumValue"
+                    value={this.state.mobileNumValue}
                     onChange={this.handleInputValue}
                   />
-                </div>
-                {activeId === 1 && (
-                  <div className="characterCheck">8 character minimum</div>
                 )}
-                <button
-                  className="signUpButton"
-                  type="submit"
-                  name="sign"
-                  onClick={
-                    activeId === 1
-                      ? this.handleSignUpClick
-                      : this.handleLogInClick
-                  }
-                >
-                  {activeId === 1 ? "SIGN UP" : "LOG IN"}
-                </button>
-                <button>
-                  <div
-                    class="g-signin2"
-                    data-width="455"
-                    data-longtitle="true"
-                    data-onsuccess="onSignIn"
-                  ></div>
-                </button>
+                <input
+                  className="psBox"
+                  type="password"
+                  placeholder="Password*"
+                  name="pwValue"
+                  value={pwValue}
+                  onChange={this.handleInputValue}
+                />
               </div>
+              {activeId === 1 && (
+                <div className="characterCheck">8 character minimum</div>
+              )}
+              <button
+                className="signUpButton"
+                type="submit"
+                name="sign"
+                onClick={
+                  activeId === 1
+                    ? this.handleSignUpClick
+                    : this.handleLogInClick
+                }
+              >
+                {activeId === 1 ? "SIGN UP" : "LOG IN"}
+              </button>
+              <button>
+                <GoogleLogin
+                  clientId="1050514458597-qmbe588bngrmgaoq8ars6tfs6na9em93.apps.googleusercontent.com"
+                  render={(renderProps) => (
+                    <button
+                      className="googleLogin"
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                    >
+                      <img src="/Images/google.png" />
+                      Google Login
+                    </button>
+                  )}
+                  buttonText="Login"
+                  onSuccess={this.responseGoogle}
+                  onFailure={this.responseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                />
+              </button>
             </div>
           </div>
-        ) : null}
-      </>
+        </div>
+        {/* ) : null} */}
+      </div>
     );
   }
 }

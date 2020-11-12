@@ -2,18 +2,12 @@
 
 .Login {
   width: 480px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  // background: rgba(0, 0, 0, 0.6);
+  margin: 0 15px;
 
   .loginBox {
     display: flex;
     flex-direction: column;
     position: relative;
-    margin: 50px auto;
 
     .btnClose {
       height: 44px;
@@ -103,10 +97,29 @@
         border: 0;
         border-radius: 4px;
         background-color: $default-red;
+        cursor: pointer;
       }
-      .g-signin2 div {
-        font-weight: bold;
-        outline: none;
+
+      // .g-signin2 div {
+      //   font-weight: bold;
+      //   outline: none;
+      // }
+      .googleLogin {
+        width: 455px;
+        height: 44px;
+        padding: 6px 12px;
+        margin: 25px 1px 15px 1px;
+        color: black;
+        font-family: “Fira-sans”;
+        font-weight: 900;
+        border: 0;
+        border-radius: 4px;
+        border: 1px solid;
+        cursor: pointer;
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
       }
     }
   }

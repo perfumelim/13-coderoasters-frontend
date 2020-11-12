@@ -1,9 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import DropdownList from "./DropdownListData";
+
 import "./DropdownContent.scss";
 
 class Shop extends Component {
+  goToShop = () => {
+    this.props.history.push("/ProductList");
+    window.location.reload();
+  };
   render() {
     return (
       <div className="dropdownShop">
@@ -13,8 +18,8 @@ class Shop extends Component {
           </li>
           {DropdownList.shopCoffee.map((item, idx) => {
             return (
-              <li key={idx}>
-                <Link to="/">{item}</Link>
+              <li key={idx} onClick={this.goToShop}>
+                {item}
               </li>
             );
           })}
@@ -56,4 +61,4 @@ class Shop extends Component {
   }
 }
 
-export default Shop;
+export default withRouter(Shop);

@@ -6,6 +6,7 @@ import "./ProductList.scss";
 
 class ProductList extends Component {
   render() {
+    console.log("mount!");
     return (
       <div className="productList">
         <Header />
@@ -17,4 +18,5 @@ class ProductList extends Component {
     );
   }
 }
+
 export default ProductList;

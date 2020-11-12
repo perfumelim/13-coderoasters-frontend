@@ -31,7 +31,7 @@ class Quiz extends Component {
           })
             .then((res) => res.json())
             .then((res) =>
-              this.props.history.push(`/products/${res.foundProductID}`)
+              this.props.history.push(`/productdetails/${res.foundProductID}`)
             );
         } else this.props.history.push(`/${this.state.answerIdx}`);
       }

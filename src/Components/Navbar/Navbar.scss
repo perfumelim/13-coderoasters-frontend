@@ -1,3 +1,30 @@
+.loginModal {
+  position: absolute;
+  top: 0;
+
+  .loginBar {
+    position: fixed;
+    top: 0;
+    left: 32%;
+    z-index: 20;
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: lightgray;
+    opacity: 70%;
+  }
+
+  .g-signin2 div {
+    font-weight: bold;
+    outline: none;
+  }
+}
+
 .Navbar {
   .navigation {
     position: relative;
@@ -57,7 +84,7 @@
       border-radius: 4px;
       font-size: 11px;
       font-weight: bold;
-      z-index: 99;
+      z-index: 10;
     }
 
     .matchBtn:hover {

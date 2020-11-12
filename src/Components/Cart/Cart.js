@@ -3,7 +3,7 @@ import "./Cart.scss";
 
 const APIItemsInCart = "http://10.58.1.167:8000/cart";
 
-export default class Cart extends React.Component {
+export default class Cart extends Component {
   constructor() {
     super();
     this.state = {
