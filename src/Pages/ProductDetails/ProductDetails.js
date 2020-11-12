@@ -287,7 +287,7 @@ export default class ProductDetails extends React.Component {
                 {""}|{""}
               </span>
               <span className="itemPrice">
-                PAY ${quantityCount * productSummary.price}
+                {`PAY $${(+quantityCount * +productSummary.price).toFixed(2)}`}
               </span>
             </button>
           </div>
