@@ -101,7 +101,9 @@ export default class Cart extends React.Component {
                             {item.ground.name} Bean | {item.bagWeight}
                           </p>
                         </div>
-                        <div className="productPrice">${item.price}</div>
+                        <div className="productPrice">{`$${(+item.price).toFixed(
+                          2
+                        )}`}</div>
                       </div>
                       <button
                         className="removeFromCart"
@@ -117,7 +119,15 @@ export default class Cart extends React.Component {
             </div>
             <div className="cartTotal">
               <span>Total</span>
-              <p>$104.10</p>
+              <p>
+                $
+                {itemList &&
+                  itemList
+                    .reduce(function (acc, el) {
+                      return acc + Number(el.price) * Number(el.quantity);
+                    }, 0)
+                    .toFixed(2)}
+              </p>
             </div>
             <div className="cartCheckout">
               <button>CHECKOUT</button>
