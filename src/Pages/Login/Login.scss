@@ -1,0 +1,113 @@
+@import "../../Styles/common.scss";
+
+.Login {
+  width: 480px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // background: rgba(0, 0, 0, 0.6);
+
+  .loginBox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 50px auto;
+
+    .btnClose {
+      height: 44px;
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .accountBox {
+      display: flex;
+      flex-direction: row;
+
+      .accountButton {
+        width: 240px;
+        height: 72px;
+        border: 0;
+        $default-light-grey: rgb(233, 233, 233);
+        border-bottom: 4px solid #f0f0f0;
+        outline: 0;
+        background-color: $default-white;
+        text-align: center;
+        font-family: Fira-sans;
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .accountButtonLine {
+        width: 240px;
+        height: 72px;
+        border: 0;
+        $default-light-grey: rgb(233, 233, 233);
+        border-bottom: 4px solid $default-black;
+        outline: 0;
+        background-color: $default-white;
+        text-align: center;
+        font-family: Fira-sans;
+        font-size: 28px;
+        font-weight: 900;
+      }
+    }
+
+    .loginContainer {
+      padding: 24px 12px 0;
+      width: 444px;
+
+      input {
+        width: 444px;
+        height: 60px;
+        padding: 6px 12px 6px 0;
+        font-size: 18px;
+        color: #000000;
+        border: 0;
+        outline: 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      input::placeholder {
+        color: #a3a3a3;
+        font-weight: 200;
+      }
+
+      input:focus {
+        border-bottom: 1px solid $default-black;
+      }
+
+      .characterCheck {
+        width: 444px;
+        height: 19px;
+        margin: 10px 0;
+        color: #a3a3a3;
+      }
+
+      .signUpButton {
+        width: 455px;
+        height: 44px;
+        padding: 6px 12px;
+        margin: 25px 1px 15px 1px;
+        color: $default-white;
+        font-family: Fira-sans;
+        font-weight: 900;
+        border: 0;
+        border-radius: 4px;
+        background-color: $default-red;
+      }
+      .g-signin2 div {
+        font-weight: bold;
+        outline: none;
+      }
+    }
+  }
+}
