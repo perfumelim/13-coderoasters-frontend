@@ -16,8 +16,7 @@ export default class Cart extends Component {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIsImlhdCI6MTYwNTE5OTE4NSwiZXhwIjoxNjA1Mjg1NTg1fQ.DdlwCm2fx2_gHFRRnEjekz3RPoS6sXDAMWshXr5mZUM",
+        Authorization: localStorage.getItem("token"),
       },
     })
       .then((res) => res.json())
@@ -35,8 +34,7 @@ export default class Cart extends Component {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIsImlhdCI6MTYwNTE5OTE4NSwiZXhwIjoxNjA1Mjg1NTg1fQ.DdlwCm2fx2_gHFRRnEjekz3RPoS6sXDAMWshXr5mZUM",
+        Authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify({
         productId: e.target.value,
@@ -61,7 +59,6 @@ export default class Cart extends Component {
           this.setState({
             itemList: filteredCart,
           });
-          // this.props.handleShowCart();
         } else {
           alert("로그인을 먼저 해주세요!");
         }
@@ -101,9 +98,7 @@ export default class Cart extends Component {
                             {item.ground.name} Bean | {item.bagWeight}
                           </p>
                         </div>
-                        <div className="productPrice">{`$${(+item.price).toFixed(
-                          2
-                        )}`}</div>
+                        <div className="productPrice">${item.price}</div>
                       </div>
                       <button
                         className="removeFromCart"

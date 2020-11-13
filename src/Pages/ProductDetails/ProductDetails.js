@@ -146,8 +146,7 @@ export default class ProductDetails extends React.Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTIsImlhdCI6MTYwNTE5OTE4NSwiZXhwIjoxNjA1Mjg1NTg1fQ.DdlwCm2fx2_gHFRRnEjekz3RPoS6sXDAMWshXr5mZUM",
+        Authorization: localStorage.getItem("token"),
       },
       body: JSON.stringify({
         productId: productSummary.id,
