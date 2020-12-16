@@ -108,7 +108,7 @@ export class Login extends Component {
       .then((response) => response.json())
       .then((result) => {
         if (result.message === "login success!") {
-          localStorage.setItem("token", result.token);
+          localStorage.setItem("token", `bearer ${result.token}`);
           alert("Login SUCCESS!");
           this.props.showLoginModal();
           this.props.history.push("/1");
