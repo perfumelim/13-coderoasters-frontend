@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import Cart from "../../Components/Cart/Cart";
 import Card from "../ProductList/Components/CardList/Card";
+import { KM_URL } from "../../config";
 import "./ProductDetails.scss";
 import "../ProductList/Components/CardList/CardList.scss";
 
-const APIProductDetails = "http://10.58.1.167:8000/products";
-const APIGroundTypes = "http://10.58.1.167:8000/products/grounds";
-const APIAddToCart = "http://10.58.1.167:8000/cart";
-const APISimilarCoffees = "http://10.58.1.167:8000/products/similar";
+const APIProductDetails = `${KM_URL}products`;
+const APIGroundTypes = `${KM_URL}products/grounds`;
+const APIAddToCart = `${KM_URL}cart`;
+const APISimilarCoffees = `${KM_URL}products/similar`;
 
 export default class ProductDetails extends React.Component {
   constructor() {
